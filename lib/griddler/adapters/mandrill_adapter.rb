@@ -39,7 +39,7 @@ module Griddler
         if event.has_key?( field )
           event[field].map { |recipient| full_email(recipient) }
         else
-          ''
+          []
         end
       end
 
