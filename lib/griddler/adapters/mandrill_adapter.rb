@@ -36,7 +36,11 @@ module Griddler
       end
 
       def recipients(field, event)
-        event[field].map { |recipient| full_email(recipient) }
+        if event.has_key?( field )
+          event[field].map { |recipient| full_email(recipient) }
+        else
+          ''
+        end
       end
 
       def full_email(contact_info)
